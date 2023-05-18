@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./listings.component.css'],
 })
 export class ListingsComponent {
-  people = ['person1', 'person2', 'person3'];
+ passengers = ['passenger1', 'passenger2', 'passenger3'];
 }
