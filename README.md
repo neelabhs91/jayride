@@ -1,27 +1,21 @@
 # Jayride
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11.
+Angular version used is -  version 14.2.11.
+we have used Bootstrap 4
 
 ## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+we have used proxy server,
 
 ## Running unit tests
+Due to lack of time no test cases have been written
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+How to run 
+make sure you got node installed 
 
-## Running end-to-end tests
+1. Clone  the repo
+2. run npm i 
+3. run npm start, it will start the localhost:4200, with proxy settings
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. we have used switchmap,  in the servie
+2. we have assumed that the listings cannot be blank nor undefined
