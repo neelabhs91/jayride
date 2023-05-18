@@ -9,10 +9,12 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./listings-details.component.css'],
 })
 export class ListingsDetailsComponent implements OnInit, OnDestroy {
-  @Input() person!: string;
+  @Input() passenger!: string;
+
   listings!: Listing[];
   isLoading: boolean = true;
   averagePrice: number = 0;
+
   private listings$!: Subscription;
 
   constructor(private readonly listingsService: ListingsService) {}
