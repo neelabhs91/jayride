@@ -1,0 +1,48 @@
+<ng-container *ngIf="!isLoading else loading">
+  <div class="">Data for {{ this.person }}</div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Vehicle Type</th>
+      <th scope="col">Price per Passenger</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--  have not implemented sorting feature since the  task was not related to sorting of table in asc and desc order-->
+    <tr *ngFor="let listing of listings">
+      <td>{{ listing.name }}</td>
+      <td>{{ listing.vehicleType.name }}</td>
+      <td>{{ listing.pricePerPassenger | currency }}</td>
+    </tr>
+
+    </tbody>
+  </table>
+  <div class="container-fluid details-wrapper">
+    <div class="row">
+      <div class="col-lg-7 col-sm-6 col-6">Total number of listings:</div>
+      <div class="col"> {{ this.listings.length }} </div>
+    </div>
+    <!--    added currency pipe to make things look more realistic-->
+    <div class="row">
+      <div class="col-lg-7 col-sm-6 col-6">Minimum Price:</div>
+      <div class="col"> {{ this.listings[0].pricePerPassenger | currency }}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-7 col-sm-6 col-6">Maximum Price:</div>
+      <div class="col"> {{ this.listings[this.listings.length - 1].pricePerPassenger | currency }}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-7 col-sm-6 col-6">Average price:</div>
+      <div class="col"> {{ this.averagePrice | currency }} </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <div class="spinner-border text-primary">
+    <span class="sr-only mt-5">Loading...</span>
+  </div>
+</ng-template>

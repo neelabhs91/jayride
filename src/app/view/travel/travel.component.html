@@ -1,0 +1,66 @@
+<form [formGroup]="travelForm" (ngSubmit)="onSubmit()">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="form-group col-lg-6">
+
+        <div class="mt-3" *ngIf="isControlInvalid('travellerName')" class="error-message">
+          {{ getErrorMessage('travellerName') }}
+        </div>
+        <div class="mt-3">
+          <label for="travellerName">Traveller Name:</label>
+          <input class="form-control" type="text" id="travellerName" formControlName="travellerName"/>
+        </div>
+
+
+        <div class="mt-3" *ngIf="isControlInvalid('travellerEmail')" class="error-message">
+          {{ getErrorMessage('travellerEmail') }}
+        </div>
+        <div class="mt-3">
+          <label for="travellerEmail">Traveller Email:</label>
+          <input class="form-control" type="email" id="travellerEmail" formControlName="travellerEmail"/>
+        </div>
+
+        <div class="mt-3" *ngIf="isControlInvalid('channel')" class="error-message">
+          {{ getErrorMessage('channel') }}
+        </div>
+        <div class="mt-3">
+          <label for="channel">Channel:</label>
+          <select class="form-control" id="channel" formControlName="channel">
+            <option value="">Select Channel</option>
+            <option value="partner">Partner</option>
+            <option value="agent">Agent</option>
+            <option value="direct customer">Direct Customer</option>
+          </select>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+            <label for="meetAndGreet">Meet & Greet:</label>
+          </div>
+
+          <div class="col">
+            <input class="form-check-input" type="checkbox" id="meetAndGreet" formControlName="meetAndGreet"/>
+          </div>
+        </div>
+
+        <div class="mt-6" *ngIf="isControlInvalid('travelDatetime')" class="error-message">
+          {{ getErrorMessage('travelDatetime') }}
+        </div>
+        <div class="mt-3">
+          <label for="travelDatetime">Travel Datetime:</label>
+          <input class="form-control" type="datetime-local" id="travelDatetime" formControlName="travelDatetime"/>
+        </div>
+
+        <div class="mt-3">
+          <div class="mt-3" *ngIf="isControlInvalid('bookingPrice')" class="error-message">
+            {{ getErrorMessage('bookingPrice') }}
+          </div>
+
+          <label for="bookingPrice">Booking Price:</label>
+          <input class="form-control" type="number" min="1" id="bookingPrice" formControlName="bookingPrice"/>
+        </div>
+        <button class="col-lg-12 btn btn-primary mt-5" type="submit" [disabled]="travelForm.invalid">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
