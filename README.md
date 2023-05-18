@@ -2,6 +2,7 @@
 
 Angular version used is -  version 14.2.11.
 we have used Bootstrap 4
+There is no gitignore file attached to this
 
 ## Development server
 we have used proxy server,
